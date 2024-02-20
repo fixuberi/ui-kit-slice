@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { IconRegisterService } from './core/services/icon-register.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ui-kit-slice';
+  iconService = inject(IconRegisterService)
+
+  isExpandedMenu = false
+  toggleMenu() {
+    this.isExpandedMenu = !this.isExpandedMenu;
+  }
 }
