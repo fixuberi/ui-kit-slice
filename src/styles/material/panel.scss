@@ -1,0 +1,18 @@
+@use '../colors' as *;
+
+.mat-mdc-menu-panel {
+  min-width: 12.5rem !important;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+
+  border: 1px solid $color-secondary-border;
+  border-radius: 0.375rem;
+
+  &.mat-elevation-z8 {
+    box-shadow: 0rem 0.125rem 0.9375rem 0rem $color-menu-shadow;
+  }
+
+  .mat-mdc-menu-content {
+    padding: 0;
+  }
+}

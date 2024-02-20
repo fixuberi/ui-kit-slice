@@ -1,0 +1,86 @@
+@use '../colors' as *;
+
+.mdc-button.mat-mdc-button {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 1.875rem;
+  padding: 0.625rem 1.875rem 0.625rem 1.875rem;
+
+  span.mdc-button__ripple {
+    display: none;
+  }
+
+  .mat-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    margin: 0 !important;
+  }
+
+  &.medium {
+    height: 2.75rem;
+  }
+  &.large {
+    height: 3.75rem;
+  }
+
+  &.icon-right {
+    flex-direction: row-reverse;
+  }
+
+  &.button-primary {
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+    &:disabled {
+      background-color: $color-disabled-bg;
+      color: $color-disabled-text-icon;
+    }
+  }
+
+  &.button-secondary {
+    background-color: $color-white;
+    color: $color-secondary;
+    border: 1px solid $color-secondary-border;
+
+    .mat-icon {
+      color: $color-secondary;
+    }
+
+    &:hover {
+      border-color: $color-secondary-border-hover;
+      background-color: $color-white;
+    }
+
+    &:disabled {
+      background-color: $color-disabled-bg;
+      color: $color-disabled-text-icon;
+      border-color: $color-disabled-bg;
+
+      .mat-icon {
+        color: $color-disabled-text-icon;
+      }
+    }
+  }
+
+  &.button-text {
+    color: $color-secondary;
+    font-weight: 500;
+    background-color: transparent;
+    border-color: transparent;
+
+    &-underline {
+      text-decoration: underline;
+      font-weight: 400;
+    }
+
+    &:disabled {
+      color: $color-disabled-text-icon;
+      font-weight: 500;
+    }
+  }
+}
