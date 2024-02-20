@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FilterOption } from '../../types/filter.types';
 import { MAT_MENU_DEFAULT_OPTIONS } from '@angular/material/menu';
+import { FilterOption } from '../../types/filter.types';
 
 @Component({
   selector: 'app-filter',
@@ -30,8 +30,6 @@ export class FilterComponent implements OnInit {
   }
 
   submitSelection(event: MouseEvent) {
-    this.isExpandedMenu = false;
-
     this.change.emit(this.selectedOption?.value)
   }
 

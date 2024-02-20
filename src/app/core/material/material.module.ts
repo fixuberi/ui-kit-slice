@@ -4,6 +4,7 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS, MatRippleModule } from '@angular/material/co
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const matModules = [
   MatButtonModule,
@@ -11,6 +12,7 @@ const matModules = [
   MatMenuModule,
   MatRippleModule,
   MatDividerModule,
+  MatSnackBarModule
 ];
 
 @NgModule({
