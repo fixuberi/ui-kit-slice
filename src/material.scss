@@ -1,5 +1,11 @@
 @use "@angular/material" as mat;
 
+$custom-typography: mat.define-typography-config(
+  $font-family: '"Ploni", sans-serif',
+  $body-1: mat.define-typography-level(1rem, 1.15, 400),
+  $button: mat.define-typography-level(1rem, 1.15, 500)
+);
+
 $custom-primary: mat.define-palette(mat.$indigo-palette, 800);
 $custom-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
 $custom-warn: mat.define-palette(mat.$red-palette);
@@ -11,6 +17,7 @@ $custom-theme: mat.define-light-theme(
       accent: $custom-accent,
       warn: $custom-warn,
     ),
+    typography: $custom-typography
   )
 );
 

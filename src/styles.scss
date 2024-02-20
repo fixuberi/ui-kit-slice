@@ -1,6 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Ploni";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/PloniRegular.otf") format("opentype");
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: "Ploni";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/PloniMedium.otf") format("opentype");
+}
 
-@import './material.scss';
+@font-face {
+  font-family: "Ploni";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/PloniDBold.otf") format("opentype");
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Ploni", sans-serif;
+  font-size: 16px;
+}
+
+@import "./material.scss";
