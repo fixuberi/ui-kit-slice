@@ -30,6 +30,8 @@ export class FilterComponent implements OnInit {
   }
 
   submitSelection(event: MouseEvent) {
+    this.isExpandedMenu = false;
+
     this.change.emit(this.selectedOption?.value)
   }
 
@@ -38,9 +40,5 @@ export class FilterComponent implements OnInit {
 
     this.selectedOption = null;
     this.change.emit(null);
-  }
-
-  stopClick(event: MouseEvent) {
-    event.stopPropagation();
   }
 }

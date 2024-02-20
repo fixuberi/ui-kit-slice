@@ -1,13 +1,13 @@
-<button mat-button class="button-secondary medium" [matMenuTriggerFor]="menu" (menuOpened)="isExpandedMenu=true"
+<button mat-button class="button-secondary icon-right medium" [matMenuTriggerFor]="menu" (menuOpened)="isExpandedMenu=true"
   (menuClosed)="isExpandedMenu=false">
   {{label}}
   <mat-icon [svgIcon]="isExpandedMenu ?
   'arrow-up' : 'arrow-down'"></mat-icon></button>
-<mat-menu (click)="stopClick($event)" #menu="matMenu">
+<mat-menu #menu="matMenu" xPosition="before">
   <div class="panel-container" (click)="$event.stopPropagation()">
     <div class="options-container">
       <ng-container *ngFor="let option of options">
-        <button mat-button class="button-text icon-right medium p-0" (click)="toggleSelection(option, $event)">
+        <button mat-button class="button-text medium p-0" (click)="toggleSelection(option, $event)">
           {{ option.label }}
           <mat-icon svgIcon="check" [ngClass]="{'invisible-item': selectedOption?.value !== option.value}"></mat-icon>
         </button>
