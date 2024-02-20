@@ -1,22 +1,3 @@
-<section>
-  <div class="example-button-row">
-    <button mat-button class="button-primary medium" (click)="toggleMenu()">
-      סטטוס בקשה</button>
-    <button mat-button class="button-primary medium" disabled>Primary Disabled</button>
-
-    <button mat-button class="button-secondary medium" (click)="toggleMenu()"><mat-icon [svgIcon]="isExpandedMenu ?
-      'arrow-up' : 'arrow-down'"></mat-icon>
-      סטטוס בקשה</button>
-    <button mat-button class="button-secondary medium" disabled> <mat-icon [svgIcon]="isExpandedMenu ?
-      'arrow-up' : 'arrow-down'"></mat-icon>
-      Secondary Disabled</button>
-
-    <button mat-button class="button-secondary medium" disabled><mat-icon svgIcon="check"></mat-icon>
-      Disabled</button>
-
-    <button mat-button class="button-text icon-right medium" disabled>
-      text button
-      <mat-icon svgIcon="check"></mat-icon>
-    </button>
-  </div>
+<section class="example-button-row">
+  <app-filter label="סטטוס בקשה" [options]="filterOptions" (change)="filterChanged($event)"></app-filter>
 </section>

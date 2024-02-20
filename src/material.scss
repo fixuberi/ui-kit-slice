@@ -2,8 +2,8 @@
 
 $custom-typography: mat.define-typography-config(
   $font-family: '"Ploni", sans-serif',
-  $body-1: mat.define-typography-level(1rem, 1.15, 400),
-  $button: mat.define-typography-level(1rem, 1.15, 500)
+  $body-1: mat.define-typography-level(1rem, 1.15rem, 400),
+  $button: mat.define-typography-level(1rem, 1.15rem, 500),
 );
 
 $custom-primary: mat.define-palette(mat.$indigo-palette, 800);
@@ -17,7 +17,7 @@ $custom-theme: mat.define-light-theme(
       accent: $custom-accent,
       warn: $custom-warn,
     ),
-    typography: $custom-typography
+    typography: $custom-typography,
   )
 );
 
@@ -106,10 +106,32 @@ $custom-theme: mat.define-light-theme(
     font-weight: 500;
     background-color: transparent;
     border-color: transparent;
-    height: 22px;
+
+    &-underline {
+      text-decoration: underline;
+      font-weight: 400;
+    }
 
     &:disabled {
       color: #6b6e77;
+      font-weight: 500;
     }
+  }
+}
+
+.mat-mdc-menu-panel {
+  min-width: 200px !important;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+
+  border: 1px solid #bdbfd5;
+  border-radius: 6px;
+
+  &.mat-elevation-z8 {
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .mat-mdc-menu-content {
+    padding: 0;
   }
 }

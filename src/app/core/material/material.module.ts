@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MAT_RIPPLE_GLOBAL_OPTIONS, MatRippleModule } from '@angular/material/core';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatRippleModule} from '@angular/material/core';
 
 const matModules = [
   MatButtonModule,
   MatIconModule,
   MatMenuModule,
-  MatRippleModule
+  MatRippleModule,
+  MatDividerModule,
 ];
 
 @NgModule({
   declarations: [],
   imports: [...matModules],
-  exports: [...matModules]
+  exports: [...matModules],
+  providers: [
+    { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: { disabled: true } }
+  ]
 })
 export class MaterialModule {}
