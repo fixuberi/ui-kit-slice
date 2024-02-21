@@ -1,4 +1,4 @@
-<button mat-button class="button-secondary icon-right medium" [matMenuTriggerFor]="menu" (menuOpened)="isExpandedMenu=true"
+<button mat-button #menuTrigger="matMenuTrigger" class="button-secondary icon-right medium" [matMenuTriggerFor]="menu" (menuOpened)="isExpandedMenu=true"
   (menuClosed)="isExpandedMenu=false">
   {{label}}
   <mat-icon [svgIcon]="isExpandedMenu ?

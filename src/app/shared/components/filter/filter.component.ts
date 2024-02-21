@@ -1,5 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MAT_MENU_DEFAULT_OPTIONS } from '@angular/material/menu';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import {
+  MAT_MENU_DEFAULT_OPTIONS,
+  MatMenuTrigger,
+} from '@angular/material/menu';
 import { FilterOption } from '../../types/filter.types';
 
 @Component({
@@ -7,10 +17,12 @@ import { FilterOption } from '../../types/filter.types';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
   providers: [
-    {provide: MAT_MENU_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
-  ]
+    { provide: MAT_MENU_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
+  ],
 })
 export class FilterComponent implements OnInit {
+  @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;
+
   @Input() label: string = '';
   @Input() options: FilterOption[] = [];
 
@@ -30,7 +42,10 @@ export class FilterComponent implements OnInit {
   }
 
   submitSelection(event: MouseEvent) {
-    this.change.emit(this.selectedOption?.value)
+    this.isExpandedMenu = false;
+    this.menuTrigger.closeMenu();
+
+    this.change.emit(this.selectedOption?.value);
   }
 
   resetSelection(event: MouseEvent) {
